@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jtest — Learn Japanese (N5–N1)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 id="logo" title="Back to menu">Jtest <span class="sub">日本語 N5–N1</span></h1>
+    <div class="head-right">
+      <button id="uiLangBtn" class="ghost light">中文</button>
+      <button id="homeBtn" class="ghost light" hidden data-i18n="backToDecks">← Decks</button>
+    </div>
+  </header>
+
+  <!-- HOME: list of decks -->
+  <main id="homeView">
+    <p class="intro" id="intro"></p>
+    <div id="deckList"></div>
+  </main>
+
+  <!-- DECK MENU: choose study or quiz -->
+  <main id="deckView" hidden>
+    <h2 id="deckTitle"></h2>
+    <p id="deckStats" class="stats"></p>
+
+    <h3 class="section" data-i18n="studyHeading">📖 Study</h3>
+    <div class="mode-buttons">
+      <button id="studyBtn" class="primary" data-i18n="flashcards">Flashcards</button>
+    </div>
+
+    <h3 class="section" data-i18n="quizHeading">📝 Quiz</h3>
+    <div class="quiz-setup">
+      <label><span data-i18n="directionLabel">Direction</span>
+        <select id="quizDir">
+          <option value="jp2mean" data-i18n="dir_jp2mean">Japanese → Meaning</option>
+          <option value="read2mean" data-i18n="dir_read2mean">Reading (kana) → Meaning</option>
+          <option value="mean2jp" data-i18n="dir_mean2jp">Meaning → Japanese</option>
+        </select>
+      </label>
+      <label><span data-i18n="answerInLabel">Answer in</span>
+        <select id="quizLang">
+          <option value="en" data-i18n="lang_en">English</option>
+          <option value="zht">中文（繁體）</option>
+          <option value="zhs">中文（简体）</option>
+        </select>
+      </label>
+      <label><span data-i18n="questionsLabel">Questions</span>
+        <select id="quizCount">
+          <option value="5">5</option>
+          <option value="10" selected>10</option>
+          <option value="20">20</option>
+          <option value="all" data-i18n="count_all">All</option>
+        </select>
+      </label>
+      <button id="quizBtn" class="primary" data-i18n="startQuiz">Start quiz</button>
+    </div>
+    <p class="hint" id="langHint"></p>
+  </main>
+
+  <!-- FLASHCARD STUDY -->
+  <main id="studyView" hidden>
+    <p id="studyProgress" class="stats"></p>
+    <div id="flashcard" class="card">
+      <div class="card-front" id="cardFront"></div>
+      <div class="card-back" id="cardBack" hidden></div>
+      <div class="card-hint" data-i18n="clickToFlip">click the card to flip</div>
+    </div>
+    <div class="row">
+      <button id="prevBtn" class="ghost" data-i18n="prev">‹ Prev</button>
+      <button id="flipBtn" class="primary" data-i18n="flip">Flip</button>
+      <button id="nextBtn" class="ghost" data-i18n="next">Next ›</button>
+    </div>
+  </main>
+
+  <!-- QUIZ -->
+  <main id="quizView" hidden>
+    <p id="quizProgress" class="stats"></p>
+    <div class="card quiz-question" id="quizQuestion"></div>
+    <div id="quizOptions" class="options"></div>
+    <p id="quizFeedback" class="feedback"></p>
+    <button id="quizNextBtn" class="primary" hidden data-i18n="next">Next ›</button>
+  </main>
+
+  <!-- RESULTS -->
+  <main id="resultView" hidden>
+    <h2 data-i18n="quizFinished">Quiz finished! 🎉</h2>
+    <p id="resultScore" class="big-score"></p>
+    <div class="row">
+      <button id="retryBtn" class="primary" data-i18n="tryAgain">Try again</button>
+      <button id="backToDeckBtn" class="ghost" data-i18n="backToDeck">Back to deck</button>
+    </div>
+  </main>
+
+  <footer>
+    <span id="footerText"></span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

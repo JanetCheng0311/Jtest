@@ -48,7 +48,11 @@ def main():
         if removed:
             with open(path, "w", encoding="utf-8") as f:
                 json.dump(clean, f, ensure_ascii=False, indent=2)
-        print(f"{os.path.basename(path):20s} {len(clean):4d} cards  (removed {removed})")
+        zh = sum(1 for c in clean if c.get("zht") and c.get("zhs"))
+        name = os.path.basename(path)
+        is_kana = name in ("hiragana.json", "katakana.json")
+        zh_note = "kana (no zh)" if is_kana else f"{zh}/{len(clean)} have 中文"
+        print(f"{name:20s} {len(clean):4d} cards  (removed {removed})  {zh_note}")
     print("---")
     print("total removed:", total_removed)
 

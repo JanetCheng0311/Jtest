@@ -1,14 +1,14 @@
 [
-  {"front": "〜にもかかわらず", "reading": "あめにもかかわらず でかけました。", "meaning": "'in spite of / despite'. (Despite the rain, I went out.)"},
-  {"front": "〜ながらも", "reading": "しっていながらも いわなかった。", "meaning": "'even though / although'. (Even though I knew, I didn't say.)"},
-  {"front": "〜わりに", "reading": "ねだんのわりに おいしい。", "meaning": "'considering / for (a thing)'. (Tasty considering the price.)"},
-  {"front": "〜どころか", "reading": "やすむどころか いそがしくなった。", "meaning": "'far from / let alone'. (Far from resting, I got busier.)"},
-  {"front": "〜以上は", "reading": "やくそくした いじょうは まもります。", "meaning": "'now that / since'. (Now that I've promised, I'll keep it.)"},
-  {"front": "〜上で", "reading": "かんがえたうえで きめます。", "meaning": "'after / upon doing'. (I'll decide after thinking it over.)"},
-  {"front": "〜に基づいて", "reading": "データにもとづいて はんだんします。", "meaning": "'based on'. (We judge based on the data.)"},
-  {"front": "〜に応じて", "reading": "しゅうにゅうにおうじて はらいます。", "meaning": "'according to / depending on'. (You pay according to income.)"},
-  {"front": "〜だけあって", "reading": "プロだけあって じょうずだ。", "meaning": "'as expected of / fittingly'. (Skilled, as expected of a pro.)"},
-  {"front": "〜得る (うる)", "reading": "それは あり得ます。", "meaning": "'can / possible to'. (That is possible.)"},
-  {"front": "〜かねない", "reading": "じこに なりかねない。", "meaning": "'might (something bad)'. (It might lead to an accident.)"},
-  {"front": "〜ものだ", "reading": "むかしは よく あそんだものだ。", "meaning": "'used to / it's natural that'. (I used to play a lot.)"}
+  {"front": "〜にもかかわらず", "reading": "あめにもかかわらず でかけました。", "meaning": "'in spite of / despite'. (Despite the rain, I went out.)", "zht": "儘管、雖然如此", "zhs": "尽管、虽然如此"},
+  {"front": "〜ながらも", "reading": "しっていながらも いわなかった。", "meaning": "'even though / although'. (Even though I knew, I didn't say.)", "zht": "雖然…卻…", "zhs": "虽然…却…"},
+  {"front": "〜わりに", "reading": "ねだんのわりに おいしい。", "meaning": "'considering / for (a thing)'. (Tasty considering the price.)", "zht": "相對於…、就…而言", "zhs": "相对于…、就…而言"},
+  {"front": "〜どころか", "reading": "やすむどころか いそがしくなった。", "meaning": "'far from / let alone'. (Far from resting, I got busier.)", "zht": "別說…、非但…反而…", "zhs": "别说…、非但…反而…"},
+  {"front": "〜以上は", "reading": "やくそくした いじょうは まもります。", "meaning": "'now that / since'. (Now that I've promised, I'll keep it.)", "zht": "既然…就…", "zhs": "既然…就…"},
+  {"front": "〜上で", "reading": "かんがえたうえで きめます。", "meaning": "'after / upon doing'. (I'll decide after thinking it over.)", "zht": "在…之後、…的基礎上", "zhs": "在…之后、…的基础上"},
+  {"front": "〜に基づいて", "reading": "データにもとづいて はんだんします。", "meaning": "'based on'. (We judge based on the data.)", "zht": "根據、基於", "zhs": "根据、基于"},
+  {"front": "〜に応じて", "reading": "しゅうにゅうにおうじて はらいます。", "meaning": "'according to / depending on'. (You pay according to income.)", "zht": "根據…、因應…", "zhs": "根据…、因应…"},
+  {"front": "〜だけあって", "reading": "プロだけあって じょうずだ。", "meaning": "'as expected of / fittingly'. (Skilled, as expected of a pro.)", "zht": "不愧是、正因為", "zhs": "不愧是、正因为"},
+  {"front": "〜得る (うる)", "reading": "それは あり得ます。", "meaning": "'can / possible to'. (That is possible.)", "zht": "可能、能夠", "zhs": "可能、能够"},
+  {"front": "〜かねない", "reading": "じこに なりかねない。", "meaning": "'might (something bad)'. (It might lead to an accident.)", "zht": "有可能（發生壞事）", "zhs": "有可能（发生坏事）"},
+  {"front": "〜ものだ", "reading": "むかしは よく あそんだものだ。", "meaning": "'used to / it's natural that'. (I used to play a lot.)", "zht": "本來就…／過去常…", "zhs": "本来就…／过去常…"}
 ]

@@ -1,15 +1,15 @@
 [
-  {"front": "〜たことがある", "reading": "にほんへ いったことがあります。", "meaning": "'have done before' — past experience. (I have been to Japan.)"},
-  {"front": "〜ようになる", "reading": "はなせるようになりました。", "meaning": "'come to be able to / start to'. (I became able to speak.)"},
-  {"front": "〜ながら", "reading": "おんがくを ききながら べんきょうします。", "meaning": "Doing two actions at once. (I study while listening to music.)"},
-  {"front": "〜ば", "reading": "やすければ かいます。", "meaning": "Conditional 'if'. (If it's cheap, I'll buy it.)"},
-  {"front": "〜たら", "reading": "ついたら でんわします。", "meaning": "'when/if' — conditional. (When I arrive, I'll call.)"},
-  {"front": "〜なら", "reading": "にほんへ いくなら きょうとが いいです。", "meaning": "'if it's the case that'. (If you're going to Japan, Kyoto is good.)"},
-  {"front": "〜つもり", "reading": "らいねん いくつもりです。", "meaning": "'intend to'. (I intend to go next year.)"},
-  {"front": "〜なければならない", "reading": "べんきょうしなければなりません。", "meaning": "'must / have to'. (I have to study.)"},
-  {"front": "〜てもいい", "reading": "はいってもいいですか。", "meaning": "'may / it's okay to'. (May I come in?)"},
-  {"front": "〜てはいけない", "reading": "ここで たべてはいけません。", "meaning": "'must not'. (You must not eat here.)"},
-  {"front": "〜そうだ (looks like)", "reading": "あめが ふりそうです。", "meaning": "'looks like / seems'. (It looks like it will rain.)"},
-  {"front": "〜と思う", "reading": "いいと おもいます。", "meaning": "'I think that ...'. (I think it's good.)"},
-  {"front": "〜やすい / 〜にくい", "reading": "よみやすい ほん。", "meaning": "'easy to / hard to do'. (an easy-to-read book)"}
+  {"front": "〜たことがある", "reading": "にほんへ いったことがあります。", "meaning": "'have done before' — past experience. (I have been to Japan.)", "zht": "曾經做過（過去經驗）", "zhs": "曾经做过（过去经验）"},
+  {"front": "〜ようになる", "reading": "はなせるようになりました。", "meaning": "'come to be able to / start to'. (I became able to speak.)", "zht": "變得會…／開始…", "zhs": "变得会…／开始…"},
+  {"front": "〜ながら", "reading": "おんがくを ききながら べんきょうします。", "meaning": "Doing two actions at once. (I study while listening to music.)", "zht": "一邊…一邊…（同時做兩件事）", "zhs": "一边…一边…（同时做两件事）"},
+  {"front": "〜ば", "reading": "やすければ かいます。", "meaning": "Conditional 'if'. (If it's cheap, I'll buy it.)", "zht": "假設條件「如果」", "zhs": "假设条件“如果”"},
+  {"front": "〜たら", "reading": "ついたら でんわします。", "meaning": "'when/if' — conditional. (When I arrive, I'll call.)", "zht": "「當／如果」條件", "zhs": "“当／如果”条件"},
+  {"front": "〜なら", "reading": "にほんへ いくなら きょうとが いいです。", "meaning": "'if it's the case that'. (If you're going to Japan, Kyoto is good.)", "zht": "「如果是…的話」", "zhs": "“如果是…的话”"},
+  {"front": "〜つもり", "reading": "らいねん いくつもりです。", "meaning": "'intend to'. (I intend to go next year.)", "zht": "打算（做某事）", "zhs": "打算（做某事）"},
+  {"front": "〜なければならない", "reading": "べんきょうしなければなりません。", "meaning": "'must / have to'. (I have to study.)", "zht": "必須、不得不", "zhs": "必须、不得不"},
+  {"front": "〜てもいい", "reading": "はいってもいいですか。", "meaning": "'may / it's okay to'. (May I come in?)", "zht": "可以、允許", "zhs": "可以、允许"},
+  {"front": "〜てはいけない", "reading": "ここで たべてはいけません。", "meaning": "'must not'. (You must not eat here.)", "zht": "不可以、禁止", "zhs": "不可以、禁止"},
+  {"front": "〜そうだ (looks like)", "reading": "あめが ふりそうです。", "meaning": "'looks like / seems'. (It looks like it will rain.)", "zht": "看起來、好像（即將）", "zhs": "看起来、好像（即将）"},
+  {"front": "〜と思う", "reading": "いいと おもいます。", "meaning": "'I think that ...'. (I think it's good.)", "zht": "我認為…", "zhs": "我认为…"},
+  {"front": "〜やすい / 〜にくい", "reading": "よみやすい ほん。", "meaning": "'easy to / hard to do'. (an easy-to-read book)", "zht": "容易做／難做", "zhs": "容易做／难做"}
 ]

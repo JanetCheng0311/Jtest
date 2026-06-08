@@ -1,14 +1,14 @@
 [
-  {"front": "〜をものともせず", "reading": "きけんをものともせず すすんだ。", "meaning": "'undaunted by / in defiance of'. (He pressed on, undaunted by danger.)"},
-  {"front": "〜を余儀なくされる", "reading": "ちゅうしを よぎなくされた。", "meaning": "'be forced to / have no choice but'. (We were forced to cancel.)"},
-  {"front": "〜ならではの", "reading": "プロならではの ぎじゅつ。", "meaning": "'unique to / only possible for'. (Skill unique to a professional.)"},
-  {"front": "〜きらいがある", "reading": "かれは おおげさに いうきらいがある。", "meaning": "'tend to (negative)'. (He tends to exaggerate.)"},
-  {"front": "〜にあって", "reading": "こんなんなじょうきょうにあって がんばる。", "meaning": "'in (a situation) / given'. (Striving even in hard circumstances.)"},
-  {"front": "〜をよそに", "reading": "しんぱいをよそに でかけた。", "meaning": "'ignoring / despite (others' feelings)'. (He left, ignoring their worry.)"},
-  {"front": "〜が早いか", "reading": "ついたが はやいか たべはじめた。", "meaning": "'as soon as'. (He started eating as soon as he arrived.)"},
-  {"front": "〜とあって", "reading": "れんきゅうとあって こんでいる。", "meaning": "'because of the special circumstance that'. (Crowded, it being a long weekend.)"},
-  {"front": "〜まじき", "reading": "あるまじき こうい。", "meaning": "'must not / unbecoming'. (Conduct that ought not to be.)"},
-  {"front": "〜ともなると", "reading": "しゃちょうともなると いそがしい。", "meaning": "'when it comes to (a high level)'. (When you become president, you're busy.)"},
-  {"front": "〜であれ", "reading": "だれであれ ルールは まもる。", "meaning": "'no matter / whoever'. (Whoever it is, the rules apply.)"},
-  {"front": "〜にかたくない", "reading": "そうぞうにかたくない。", "meaning": "'not hard to (imagine, etc.)'. (It is not hard to imagine.)"}
+  {"front": "〜をものともせず", "reading": "きけんをものともせず すすんだ。", "meaning": "'undaunted by / in defiance of'. (He pressed on, undaunted by danger.)", "zht": "不顧、不畏（困難等）", "zhs": "不顾、不畏（困难等）"},
+  {"front": "〜を余儀なくされる", "reading": "ちゅうしを よぎなくされた。", "meaning": "'be forced to / have no choice but'. (We were forced to cancel.)", "zht": "被迫、不得不", "zhs": "被迫、不得不"},
+  {"front": "〜ならではの", "reading": "プロならではの ぎじゅつ。", "meaning": "'unique to / only possible for'. (Skill unique to a professional.)", "zht": "…獨有的、只有…才有的", "zhs": "…独有的、只有…才有的"},
+  {"front": "〜きらいがある", "reading": "かれは おおげさに いうきらいがある。", "meaning": "'tend to (negative)'. (He tends to exaggerate.)", "zht": "有…的傾向（負面）", "zhs": "有…的倾向（负面）"},
+  {"front": "〜にあって", "reading": "こんなんなじょうきょうにあって がんばる。", "meaning": "'in (a situation) / given'. (Striving even in hard circumstances.)", "zht": "在…（情況）之下", "zhs": "在…（情况）之下"},
+  {"front": "〜をよそに", "reading": "しんぱいをよそに でかけた。", "meaning": "'ignoring / despite (others' feelings)'. (He left, ignoring their worry.)", "zht": "不顧（他人感受）、無視", "zhs": "不顾（他人感受）、无视"},
+  {"front": "〜が早いか", "reading": "ついたが はやいか たべはじめた。", "meaning": "'as soon as'. (He started eating as soon as he arrived.)", "zht": "一…就…（剛…立刻）", "zhs": "一…就…（刚…立刻）"},
+  {"front": "〜とあって", "reading": "れんきゅうとあって こんでいる。", "meaning": "'because of the special circumstance that'. (Crowded, it being a long weekend.)", "zht": "由於…（特殊情況）", "zhs": "由于…（特殊情况）"},
+  {"front": "〜まじき", "reading": "あるまじき こうい。", "meaning": "'must not / unbecoming'. (Conduct that ought not to be.)", "zht": "不該有的、不應當", "zhs": "不该有的、不应当"},
+  {"front": "〜ともなると", "reading": "しゃちょうともなると いそがしい。", "meaning": "'when it comes to (a high level)'. (When you become president, you're busy.)", "zht": "一旦到了…（程度）", "zhs": "一旦到了…（程度）"},
+  {"front": "〜であれ", "reading": "だれであれ ルールは まもる。", "meaning": "'no matter / whoever'. (Whoever it is, the rules apply.)", "zht": "無論…、不管是誰", "zhs": "无论…、不管是谁"},
+  {"front": "〜にかたくない", "reading": "そうぞうにかたくない。", "meaning": "'not hard to (imagine, etc.)'. (It is not hard to imagine.)", "zht": "不難（想像等）", "zhs": "不难（想象等）"}
 ]

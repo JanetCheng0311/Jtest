@@ -1,57 +1,13 @@
 [
-  {
-    "front": "傾",
-    "reading": "けい / かたむ",
-    "meaning": "to lean, to incline"
-  },
-  {
-    "front": "象",
-    "reading": "しょう / ぞう",
-    "meaning": "elephant, phenomenon"
-  },
-  {
-    "front": "構",
-    "reading": "こう / かま",
-    "meaning": "structure, to construct"
-  },
-  {
-    "front": "造",
-    "reading": "ぞう / つく",
-    "meaning": "to make, to build"
-  },
-  {
-    "front": "制",
-    "reading": "せい",
-    "meaning": "system, to control"
-  },
-  {
-    "front": "限",
-    "reading": "げん / かぎ",
-    "meaning": "limit"
-  },
-  {
-    "front": "境",
-    "reading": "きょう / さかい",
-    "meaning": "boundary, border"
-  },
-  {
-    "front": "提",
-    "reading": "てい / さ",
-    "meaning": "to propose, to carry"
-  },
-  {
-    "front": "供",
-    "reading": "きょう / そな",
-    "meaning": "to offer, to supply"
-  },
-  {
-    "front": "略",
-    "reading": "りゃく",
-    "meaning": "abbreviation, strategy"
-  },
-  {
-    "front": "替",
-    "reading": "たい / か",
-    "meaning": "to replace, to exchange"
-  }
+  {"front": "傾", "reading": "けい / かたむ", "meaning": "to lean, to incline", "zht": "傾斜", "zhs": "倾斜"},
+  {"front": "象", "reading": "しょう / ぞう", "meaning": "elephant, phenomenon", "zht": "象、現象", "zhs": "象、现象"},
+  {"front": "構", "reading": "こう / かま", "meaning": "structure, to construct", "zht": "構成、結構", "zhs": "构成、结构"},
+  {"front": "造", "reading": "ぞう / つく", "meaning": "to make, to build", "zht": "製造、建造", "zhs": "制造、建造"},
+  {"front": "制", "reading": "せい", "meaning": "system, to control", "zht": "制度、控制", "zhs": "制度、控制"},
+  {"front": "限", "reading": "げん / かぎ", "meaning": "limit", "zht": "限制", "zhs": "限制"},
+  {"front": "境", "reading": "きょう / さかい", "meaning": "boundary, border", "zht": "邊界、境界", "zhs": "边界、境界"},
+  {"front": "提", "reading": "てい / さ", "meaning": "to propose, to carry", "zht": "提出、提", "zhs": "提出、提"},
+  {"front": "供", "reading": "きょう / そな", "meaning": "to offer, to supply", "zht": "提供、供給", "zhs": "提供、供给"},
+  {"front": "略", "reading": "りゃく", "meaning": "abbreviation, strategy", "zht": "省略、策略", "zhs": "省略、策略"},
+  {"front": "替", "reading": "たい / か", "meaning": "to replace, to exchange", "zht": "替換、替代", "zhs": "替换、替代"}
 ]
