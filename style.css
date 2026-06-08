@@ -51,6 +51,48 @@ main {
 .intro { color: var(--muted); margin-top: 4px; }
 .hint { color: var(--muted); font-size: .85rem; margin-top: 12px; }
 
+/* ---- learning path / resources ---- */
+.resources-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #fff7ed;
+  border: 1px solid #f0d9b5;
+  color: var(--ink);
+  font-size: 1.05rem;
+  margin: 6px 0 22px;
+}
+.resources-link:hover { border-color: var(--accent); }
+
+.stage {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.stage-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.stage-tag {
+  background: var(--accent); color: #fff;
+  font-size: .78rem; font-weight: 600;
+  padding: 3px 10px; border-radius: 20px; white-space: nowrap;
+}
+.stage-title { font-size: 1.1rem; font-weight: 700; }
+.stage-note { color: var(--muted); margin: 10px 0; }
+.stage-links { display: flex; flex-direction: column; gap: 8px; margin: 12px 0; }
+.res-link {
+  display: block;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--accent-dark);
+  background: #fff;
+}
+.res-link:hover { border-color: var(--accent); background: #fffaf8; }
+.res-link.primary { border-color: var(--accent); background: #fdeeea; font-weight: 600; }
+.stage-meta { font-size: .9rem; color: var(--muted); margin: 6px 0 0; }
+
 /* ---- deck list ---- */
 .deck-group { margin-bottom: 22px; }
 .deck-group h3 {
