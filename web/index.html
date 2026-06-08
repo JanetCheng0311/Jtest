@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jtest — Learn Japanese (N5–N1)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Jtest <span class="sub">日本語 N5–N1</span></h1>
+    <button id="homeBtn" class="ghost" hidden>← Decks</button>
+  </header>
+
+  <!-- HOME: list of decks -->
+  <main id="homeView">
+    <p class="intro">Pick a deck to study. New here? Start with <b>Hiragana</b>.</p>
+    <div id="deckList"></div>
+  </main>
+
+  <!-- DECK MENU: choose study or quiz -->
+  <main id="deckView" hidden>
+    <h2 id="deckTitle"></h2>
+    <p id="deckStats" class="stats"></p>
+    <div class="mode-buttons">
+      <button id="studyBtn" class="primary">📖 Study (flashcards)</button>
+      <button id="quizBtn" class="primary">📝 Quiz (multiple choice)</button>
+    </div>
+  </main>
+
+  <!-- FLASHCARD STUDY -->
+  <main id="studyView" hidden>
+    <p id="studyProgress" class="stats"></p>
+    <div id="flashcard" class="card">
+      <div class="card-front" id="cardFront"></div>
+      <div class="card-back" id="cardBack" hidden></div>
+      <div class="card-hint">click the card to flip</div>
+    </div>
+    <div class="row">
+      <button id="prevBtn" class="ghost">‹ Prev</button>
+      <button id="flipBtn" class="primary">Flip</button>
+      <button id="nextBtn" class="ghost">Next ›</button>
+    </div>
+  </main>
+
+  <!-- QUIZ -->
+  <main id="quizView" hidden>
+    <p id="quizProgress" class="stats"></p>
+    <div class="card quiz-question" id="quizQuestion"></div>
+    <div id="quizOptions" class="options"></div>
+    <p id="quizFeedback" class="feedback"></p>
+    <button id="quizNextBtn" class="primary" hidden>Next ›</button>
+  </main>
+
+  <!-- RESULTS -->
+  <main id="resultView" hidden>
+    <h2>Quiz finished! 🎉</h2>
+    <p id="resultScore" class="big-score"></p>
+    <div class="row">
+      <button id="retryBtn" class="primary">Try again</button>
+      <button id="backToDeckBtn" class="ghost">Back to deck</button>
+    </div>
+  </main>
+
+  <footer>
+    <span>Made for learning Japanese · runs on Windows &amp; Mac</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

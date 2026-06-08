@@ -1,0 +1,11 @@
+# your personal saved scores
+progress.json
+
+# OS / editor noise
+.DS_Store
+._*
+Thumbs.db
+__pycache__/
+*.pyc
+.vscode/
+.idea/

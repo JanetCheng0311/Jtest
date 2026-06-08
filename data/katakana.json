@@ -1,0 +1,512 @@
+[
+  {
+    "front": "ア",
+    "reading": "a",
+    "meaning": "a"
+  },
+  {
+    "front": "イ",
+    "reading": "i",
+    "meaning": "i"
+  },
+  {
+    "front": "ウ",
+    "reading": "u",
+    "meaning": "u"
+  },
+  {
+    "front": "エ",
+    "reading": "e",
+    "meaning": "e"
+  },
+  {
+    "front": "オ",
+    "reading": "o",
+    "meaning": "o"
+  },
+  {
+    "front": "カ",
+    "reading": "ka",
+    "meaning": "ka"
+  },
+  {
+    "front": "キ",
+    "reading": "ki",
+    "meaning": "ki"
+  },
+  {
+    "front": "ク",
+    "reading": "ku",
+    "meaning": "ku"
+  },
+  {
+    "front": "ケ",
+    "reading": "ke",
+    "meaning": "ke"
+  },
+  {
+    "front": "コ",
+    "reading": "ko",
+    "meaning": "ko"
+  },
+  {
+    "front": "サ",
+    "reading": "sa",
+    "meaning": "sa"
+  },
+  {
+    "front": "シ",
+    "reading": "shi",
+    "meaning": "shi"
+  },
+  {
+    "front": "ス",
+    "reading": "su",
+    "meaning": "su"
+  },
+  {
+    "front": "セ",
+    "reading": "se",
+    "meaning": "se"
+  },
+  {
+    "front": "ソ",
+    "reading": "so",
+    "meaning": "so"
+  },
+  {
+    "front": "タ",
+    "reading": "ta",
+    "meaning": "ta"
+  },
+  {
+    "front": "チ",
+    "reading": "chi",
+    "meaning": "chi"
+  },
+  {
+    "front": "ツ",
+    "reading": "tsu",
+    "meaning": "tsu"
+  },
+  {
+    "front": "テ",
+    "reading": "te",
+    "meaning": "te"
+  },
+  {
+    "front": "ト",
+    "reading": "to",
+    "meaning": "to"
+  },
+  {
+    "front": "ナ",
+    "reading": "na",
+    "meaning": "na"
+  },
+  {
+    "front": "ニ",
+    "reading": "ni",
+    "meaning": "ni"
+  },
+  {
+    "front": "ヌ",
+    "reading": "nu",
+    "meaning": "nu"
+  },
+  {
+    "front": "ネ",
+    "reading": "ne",
+    "meaning": "ne"
+  },
+  {
+    "front": "ノ",
+    "reading": "no",
+    "meaning": "no"
+  },
+  {
+    "front": "ハ",
+    "reading": "ha",
+    "meaning": "ha"
+  },
+  {
+    "front": "ヒ",
+    "reading": "hi",
+    "meaning": "hi"
+  },
+  {
+    "front": "フ",
+    "reading": "fu",
+    "meaning": "fu"
+  },
+  {
+    "front": "ヘ",
+    "reading": "he",
+    "meaning": "he"
+  },
+  {
+    "front": "ホ",
+    "reading": "ho",
+    "meaning": "ho"
+  },
+  {
+    "front": "マ",
+    "reading": "ma",
+    "meaning": "ma"
+  },
+  {
+    "front": "ミ",
+    "reading": "mi",
+    "meaning": "mi"
+  },
+  {
+    "front": "ム",
+    "reading": "mu",
+    "meaning": "mu"
+  },
+  {
+    "front": "メ",
+    "reading": "me",
+    "meaning": "me"
+  },
+  {
+    "front": "モ",
+    "reading": "mo",
+    "meaning": "mo"
+  },
+  {
+    "front": "ヤ",
+    "reading": "ya",
+    "meaning": "ya"
+  },
+  {
+    "front": "ユ",
+    "reading": "yu",
+    "meaning": "yu"
+  },
+  {
+    "front": "ヨ",
+    "reading": "yo",
+    "meaning": "yo"
+  },
+  {
+    "front": "ラ",
+    "reading": "ra",
+    "meaning": "ra"
+  },
+  {
+    "front": "リ",
+    "reading": "ri",
+    "meaning": "ri"
+  },
+  {
+    "front": "ル",
+    "reading": "ru",
+    "meaning": "ru"
+  },
+  {
+    "front": "レ",
+    "reading": "re",
+    "meaning": "re"
+  },
+  {
+    "front": "ロ",
+    "reading": "ro",
+    "meaning": "ro"
+  },
+  {
+    "front": "ワ",
+    "reading": "wa",
+    "meaning": "wa"
+  },
+  {
+    "front": "ヲ",
+    "reading": "wo",
+    "meaning": "wo"
+  },
+  {
+    "front": "ン",
+    "reading": "n",
+    "meaning": "n"
+  },
+  {
+    "front": "ガ",
+    "reading": "ga",
+    "meaning": "ga"
+  },
+  {
+    "front": "ギ",
+    "reading": "gi",
+    "meaning": "gi"
+  },
+  {
+    "front": "グ",
+    "reading": "gu",
+    "meaning": "gu"
+  },
+  {
+    "front": "ゲ",
+    "reading": "ge",
+    "meaning": "ge"
+  },
+  {
+    "front": "ゴ",
+    "reading": "go",
+    "meaning": "go"
+  },
+  {
+    "front": "ザ",
+    "reading": "za",
+    "meaning": "za"
+  },
+  {
+    "front": "ジ",
+    "reading": "ji",
+    "meaning": "ji"
+  },
+  {
+    "front": "ズ",
+    "reading": "zu",
+    "meaning": "zu"
+  },
+  {
+    "front": "ゼ",
+    "reading": "ze",
+    "meaning": "ze"
+  },
+  {
+    "front": "ゾ",
+    "reading": "zo",
+    "meaning": "zo"
+  },
+  {
+    "front": "ダ",
+    "reading": "da",
+    "meaning": "da"
+  },
+  {
+    "front": "デ",
+    "reading": "de",
+    "meaning": "de"
+  },
+  {
+    "front": "ド",
+    "reading": "do",
+    "meaning": "do"
+  },
+  {
+    "front": "バ",
+    "reading": "ba",
+    "meaning": "ba"
+  },
+  {
+    "front": "ビ",
+    "reading": "bi",
+    "meaning": "bi"
+  },
+  {
+    "front": "ブ",
+    "reading": "bu",
+    "meaning": "bu"
+  },
+  {
+    "front": "ベ",
+    "reading": "be",
+    "meaning": "be"
+  },
+  {
+    "front": "ボ",
+    "reading": "bo",
+    "meaning": "bo"
+  },
+  {
+    "front": "パ",
+    "reading": "pa",
+    "meaning": "pa"
+  },
+  {
+    "front": "ピ",
+    "reading": "pi",
+    "meaning": "pi"
+  },
+  {
+    "front": "プ",
+    "reading": "pu",
+    "meaning": "pu"
+  },
+  {
+    "front": "ペ",
+    "reading": "pe",
+    "meaning": "pe"
+  },
+  {
+    "front": "ポ",
+    "reading": "po",
+    "meaning": "po"
+  },
+  {
+    "front": "キャ",
+    "reading": "kya",
+    "meaning": "kya"
+  },
+  {
+    "front": "キュ",
+    "reading": "kyu",
+    "meaning": "kyu"
+  },
+  {
+    "front": "キョ",
+    "reading": "kyo",
+    "meaning": "kyo"
+  },
+  {
+    "front": "シャ",
+    "reading": "sha",
+    "meaning": "sha"
+  },
+  {
+    "front": "シュ",
+    "reading": "shu",
+    "meaning": "shu"
+  },
+  {
+    "front": "ショ",
+    "reading": "sho",
+    "meaning": "sho"
+  },
+  {
+    "front": "チャ",
+    "reading": "cha",
+    "meaning": "cha"
+  },
+  {
+    "front": "チュ",
+    "reading": "chu",
+    "meaning": "chu"
+  },
+  {
+    "front": "チョ",
+    "reading": "cho",
+    "meaning": "cho"
+  },
+  {
+    "front": "ニャ",
+    "reading": "nya",
+    "meaning": "nya"
+  },
+  {
+    "front": "ニュ",
+    "reading": "nyu",
+    "meaning": "nyu"
+  },
+  {
+    "front": "ニョ",
+    "reading": "nyo",
+    "meaning": "nyo"
+  },
+  {
+    "front": "ヒャ",
+    "reading": "hya",
+    "meaning": "hya"
+  },
+  {
+    "front": "ヒュ",
+    "reading": "hyu",
+    "meaning": "hyu"
+  },
+  {
+    "front": "ヒョ",
+    "reading": "hyo",
+    "meaning": "hyo"
+  },
+  {
+    "front": "ミャ",
+    "reading": "mya",
+    "meaning": "mya"
+  },
+  {
+    "front": "ミュ",
+    "reading": "myu",
+    "meaning": "myu"
+  },
+  {
+    "front": "ミョ",
+    "reading": "myo",
+    "meaning": "myo"
+  },
+  {
+    "front": "リャ",
+    "reading": "rya",
+    "meaning": "rya"
+  },
+  {
+    "front": "リュ",
+    "reading": "ryu",
+    "meaning": "ryu"
+  },
+  {
+    "front": "リョ",
+    "reading": "ryo",
+    "meaning": "ryo"
+  },
+  {
+    "front": "ギャ",
+    "reading": "gya",
+    "meaning": "gya"
+  },
+  {
+    "front": "ギュ",
+    "reading": "gyu",
+    "meaning": "gyu"
+  },
+  {
+    "front": "ギョ",
+    "reading": "gyo",
+    "meaning": "gyo"
+  },
+  {
+    "front": "ジャ",
+    "reading": "ja",
+    "meaning": "ja"
+  },
+  {
+    "front": "ジュ",
+    "reading": "ju",
+    "meaning": "ju"
+  },
+  {
+    "front": "ジョ",
+    "reading": "jo",
+    "meaning": "jo"
+  },
+  {
+    "front": "ビャ",
+    "reading": "bya",
+    "meaning": "bya"
+  },
+  {
+    "front": "ビュ",
+    "reading": "byu",
+    "meaning": "byu"
+  },
+  {
+    "front": "ビョ",
+    "reading": "byo",
+    "meaning": "byo"
+  },
+  {
+    "front": "ピャ",
+    "reading": "pya",
+    "meaning": "pya"
+  },
+  {
+    "front": "ピュ",
+    "reading": "pyu",
+    "meaning": "pyu"
+  },
+  {
+    "front": "ピョ",
+    "reading": "pyo",
+    "meaning": "pyo"
+  }
+]

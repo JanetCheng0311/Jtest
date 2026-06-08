@@ -1,0 +1,22 @@
+[
+  {"front": "増", "reading": "ぞう / ふ", "meaning": "to increase"},
+  {"front": "減", "reading": "げん / へ", "meaning": "to decrease"},
+  {"front": "変", "reading": "へん / か", "meaning": "to change, strange"},
+  {"front": "比", "reading": "ひ / くら", "meaning": "to compare"},
+  {"front": "選", "reading": "せん / えら", "meaning": "to choose"},
+  {"front": "決", "reading": "けつ / き", "meaning": "to decide"},
+  {"front": "認", "reading": "にん / みと", "meaning": "to recognize"},
+  {"front": "解", "reading": "かい / と", "meaning": "to solve, to untie"},
+  {"front": "果", "reading": "か / は", "meaning": "fruit, result"},
+  {"front": "因", "reading": "いん", "meaning": "cause"},
+  {"front": "達", "reading": "たつ", "meaning": "to reach, to attain"},
+  {"front": "格", "reading": "かく", "meaning": "status, rank"},
+  {"front": "報", "reading": "ほう", "meaning": "information, report"},
+  {"front": "告", "reading": "こく / つ", "meaning": "to inform, to announce"},
+  {"front": "規", "reading": "き", "meaning": "standard, rule"},
+  {"front": "則", "reading": "そく", "meaning": "rule, law"},
+  {"front": "経", "reading": "けい / へ", "meaning": "to pass, to manage"},
+  {"front": "営", "reading": "えい / いとな", "meaning": "to run (a business)"},
+  {"front": "値", "reading": "ち / ね", "meaning": "value, price"},
+  {"front": "頼", "reading": "らい / たの", "meaning": "to rely on, to request"}
+]

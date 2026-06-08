@@ -1,0 +1,16 @@
+[
+  {"front": "〜は〜です", "reading": "わたしは がくせいです。", "meaning": "X is Y. Basic 'A is B' sentence. (I am a student.)"},
+  {"front": "〜は〜ではありません", "reading": "これは ほんではありません。", "meaning": "Negative of です. (This is not a book.)"},
+  {"front": "〜も", "reading": "わたしも がくせいです。", "meaning": "'also, too'. (I am also a student.)"},
+  {"front": "〜の", "reading": "わたしの ほん。", "meaning": "Possessive / linking particle. (my book)"},
+  {"front": "〜を + verb", "reading": "ごはんを たべます。", "meaning": "Marks the direct object. (I eat a meal.)"},
+  {"front": "〜に (place/time)", "reading": "がっこうに いきます。", "meaning": "Marks destination or a point in time. (I go to school.)"},
+  {"front": "〜で (place of action)", "reading": "いえで たべます。", "meaning": "Marks where an action happens. (I eat at home.)"},
+  {"front": "〜へ", "reading": "にほんへ いきます。", "meaning": "Marks direction of movement. (I go to Japan.)"},
+  {"front": "〜ます / 〜ません", "reading": "のみます / のみません。", "meaning": "Polite present/future, affirmative and negative."},
+  {"front": "〜ました / 〜ませんでした", "reading": "たべました / たべませんでした。", "meaning": "Polite past, affirmative and negative."},
+  {"front": "〜たいです", "reading": "みずを のみたいです。", "meaning": "Expresses the speaker's desire to do something. (I want to drink water.)"},
+  {"front": "〜ましょう", "reading": "いきましょう。", "meaning": "'Let's ...' — a suggestion. (Let's go.)"},
+  {"front": "〜から〜まで", "reading": "くじから ごじまで。", "meaning": "'from ... to ...' (time or place). (From 9 to 5.)"},
+  {"front": "〜が ほしいです", "reading": "くるまが ほしいです。", "meaning": "'I want (a thing)'. (I want a car.)"}
+]

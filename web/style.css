@@ -1,0 +1,150 @@
+:root {
+  --bg: #f4f1ea;
+  --panel: #ffffff;
+  --ink: #2b2b33;
+  --muted: #7a7a86;
+  --accent: #c0392b;      /* a soft Japanese red */
+  --accent-dark: #97271c;
+  --good: #2e8b57;
+  --bad: #c0392b;
+  --line: #e3ded3;
+  --shadow: 0 6px 20px rgba(0,0,0,.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic",
+               "Meiryo", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+header h1 { margin: 0; font-size: 1.4rem; letter-spacing: .5px; }
+header .sub { font-weight: 400; opacity: .85; font-size: 1rem; margin-left: 6px; }
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 26px 18px 40px;
+}
+
+.intro { color: var(--muted); margin-top: 4px; }
+
+/* ---- deck list ---- */
+.deck-group { margin-bottom: 22px; }
+.deck-group h3 {
+  margin: 0 0 10px;
+  font-size: .95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+.deck-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+.deck-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  cursor: pointer;
+  transition: transform .08s ease, box-shadow .15s ease;
+  text-align: left;
+  font-size: 1rem;
+  color: var(--ink);
+}
+.deck-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.deck-card .count { display: block; color: var(--muted); font-size: .82rem; margin-top: 6px; }
+.deck-card .bestbar {
+  height: 6px; border-radius: 4px; background: var(--line); margin-top: 10px; overflow: hidden;
+}
+.deck-card .bestbar > i { display: block; height: 100%; background: var(--good); width: 0; }
+
+/* ---- deck menu ---- */
+h2 { margin-top: 4px; }
+.stats { color: var(--muted); }
+.mode-buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 18px; }
+
+/* ---- buttons ---- */
+button { font-family: inherit; font-size: 1rem; border-radius: 12px; cursor: pointer; border: none; padding: 12px 18px; }
+button.primary { background: var(--accent); color: #fff; }
+button.primary:hover { background: var(--accent-dark); }
+button.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+button.ghost:hover { background: #fff; }
+button:disabled { opacity: .4; cursor: default; }
+
+.row { display: flex; gap: 12px; justify-content: center; margin-top: 22px; align-items: center; }
+
+/* ---- flashcard ---- */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 26px;
+  text-align: center;
+  position: relative;
+}
+#flashcard { cursor: pointer; user-select: none; }
+.card-front { font-size: 4rem; line-height: 1.2; }
+.card-back { font-size: 1.6rem; color: var(--ink); }
+.card-back .reading { color: var(--accent); font-size: 1.8rem; margin-bottom: 8px; }
+.card-back .meaning { color: var(--muted); }
+.card-hint { position: absolute; bottom: 12px; font-size: .78rem; color: var(--muted); }
+
+/* ---- quiz ---- */
+.quiz-question { font-size: 3rem; min-height: 150px; }
+.quiz-question .small { font-size: 1.1rem; color: var(--muted); margin-top: 10px; }
+.options { display: grid; gap: 12px; margin-top: 18px; }
+.option {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1.1rem;
+  text-align: left;
+}
+.option:hover:not(:disabled) { border-color: var(--accent); }
+.option.correct { background: #e6f5ec; border-color: var(--good); color: var(--good); }
+.option.wrong { background: #fbe9e7; border-color: var(--bad); color: var(--bad); }
+.feedback { text-align: center; font-size: 1.05rem; min-height: 1.4em; margin-top: 14px; }
+.feedback.good { color: var(--good); }
+.feedback.bad { color: var(--bad); }
+
+.big-score { font-size: 2.4rem; text-align: center; margin: 24px 0; }
+
+footer {
+  text-align: center;
+  padding: 14px;
+  color: var(--muted);
+  font-size: .82rem;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 480px) {
+  .card-front { font-size: 3rem; }
+  .quiz-question { font-size: 2.2rem; }
+}
