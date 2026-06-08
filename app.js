@@ -181,6 +181,30 @@ const RESOURCES = [
     inApp: { en: "Review with the N2 / N1 decks.", zh: "用 N2 / N1 牌組複習。" },
     goal: { en: "Understand news and reports.", zh: "看懂新聞和報告。" },
   },
+  {
+    stage: { en: "📄 PDF", zh: "📄 PDF" },
+    title: { en: "Free PDF textbooks (download & print)", zh: "免費 PDF 教材（可下載、列印）" },
+    note: { en: "Official, 100% legal free textbooks from the Japan Foundation. Great to print or read offline. (The books are in Japanese, with free Chinese vocabulary translations on the site.)",
+            zh: "日本國際交流基金會官方、完全合法的免費教材。可印出來或離線閱讀。（課本為日文，網站另附免費中文單字翻譯。）" },
+    links: [
+      { url: "https://www.irodori.jpf.go.jp/en/starter/pdf.html",
+        label: { en: "Irodori — Starter (A1) PDF", zh: "Irodori 入門 (A1) PDF" }, primary: true },
+      { url: "https://www.irodori.jpf.go.jp/en/elementary01/pdf.html",
+        label: { en: "Irodori — Elementary 1 (A2) PDF", zh: "Irodori 初級 1 (A2) PDF" } },
+      { url: "https://www.irodori.jpf.go.jp/en/elementary02/pdf.html",
+        label: { en: "Irodori — Elementary 2 (A2) PDF", zh: "Irodori 初級 2 (A2) PDF" } },
+      { url: "https://www.irodori.jpf.go.jp/en/pre-intermediate/pdf.html",
+        label: { en: "Irodori — Pre-Intermediate (A2/B1) PDF", zh: "Irodori 中級前 (A2/B1) PDF" } },
+      { url: "https://marugoto.jpf.go.jp/en/download/",
+        label: { en: "Marugoto — free materials", zh: "Marugoto 免費教材下載" } },
+      { url: "https://www.jlpt.jp/tw/samples/sampleindex.html",
+        label: { en: "Official JLPT sample-question PDFs", zh: "JLPT 官方樣題 PDF（繁體）" } },
+      { url: "https://www.guidetojapanese.org/jp_grammar_guide.pdf",
+        label: { en: "Tae Kim grammar guide (PDF)", zh: "Tae Kim 文法指南 PDF（英文）" } },
+    ],
+    goal: { en: "Start with Irodori Starter if you want a proper textbook to follow.",
+            zh: "想要一本正式課本跟著走，就從 Irodori 入門開始。" },
+  },
 ];
 
 const PROGRESS_KEY = "jtest_progress_v1";
