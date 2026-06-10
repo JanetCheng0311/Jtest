@@ -205,6 +205,25 @@ const RESOURCES = [
     goal: { en: "Start with Irodori Starter if you want a proper textbook to follow.",
             zh: "想要一本正式課本跟著走，就從 Irodori 入門開始。" },
   },
+  {
+    stage: { en: "📖 字典", zh: "📖 字典" },
+    title: { en: "Japanese ⇄ Chinese dictionaries", zh: "中日／日中字典（查單字意思）" },
+    note: { en: "Look up any word and see the Chinese meaning, example sentences and pronunciation.",
+            zh: "用中文查日文單字的意思，還有例句和發音。不懂的字隨時查。" },
+    links: [
+      { url: "https://www.mojidict.com/",
+        label: { en: "MOJi — Japanese–Chinese dictionary (JLPT tags + audio)",
+                 zh: "MOJi 辭典 — 日中字典（附 JLPT 標籤、發音）" }, primary: true },
+      { url: "https://cjjc.weblio.jp/",
+        label: { en: "Weblio Japanese–Chinese dictionary", zh: "Weblio 日中中日辭典" } },
+      { url: "https://www.dict.asia/",
+        label: { en: "DA Japanese dictionary (Chinese)", zh: "DA 日語辭典（中文）" } },
+      { url: "https://jisho.org/",
+        label: { en: "Jisho — Japanese–English dictionary (great for kanji)",
+                 zh: "Jisho — 日英字典（查漢字很好用，英文）" } },
+    ],
+    inApp: { en: "Look up any flashcard word you don't recognise.", zh: "字卡裡看不懂的字，就用它查。" },
+  },
 ];
 
 const PROGRESS_KEY = "jtest_progress_v1";
