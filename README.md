@@ -16,6 +16,15 @@ It has flashcards and multiple-choice quizzes for:
 Every word also shows **English + 中文（繁體 / 简体）**. Your best quiz score for
 each deck is saved automatically in your browser.
 
+It also includes:
+
+- **📚 Learning path** — a step-by-step beginner roadmap with free, legal
+  links (grammar notes, free PDF textbooks, and Japanese⇄Chinese dictionaries).
+- **🗾 Japan today** — a live map of Japan with real-time **weather** and the
+  **latest news** (NHK + The Japan Times). It updates by itself, using only
+  free, no-key public services (Open-Meteo, OpenStreetMap, rss2json), so it
+  keeps working with nothing to maintain.
+
 ---
 
 ## Open it online (easiest)

@@ -53,6 +53,18 @@ const UI = {
     quizFinished: "Quiz finished! 🎉",
     tryAgain: "Try again", backToDeck: "Back to deck",
     resourcesBtn: "📚 Learning path & free resources",
+    japanBtn: "🗾 Japan map, weather & news",
+    japanTitle: "Japan today 🗾",
+    japanIntro: "A live look at Japan — the weather and news here update by themselves, even when no one is editing the app.",
+    weatherHeading: "🌤️ Weather now",
+    newsHeading: "📰 Latest news",
+    newsNHKLabel: "NHK (日本語)",
+    newsJTLabel: "The Japan Times (English)",
+    japanSource: "Weather: Open-Meteo · News: NHK & The Japan Times · Map: OpenStreetMap. All free, auto-updating.",
+    loadingText: "Loading…",
+    newsError: "Couldn't load news right now — try again later.",
+    weatherError: "Couldn't load weather right now.",
+    updatedAt: (tm) => "Updated " + tm,
     resourcesTitle: "Learning path for beginners",
     resourcesIntro: "A step-by-step path. Just start at Stage 0 and click the ▶ link — do the rest after. Everything here is free.",
     resourcesNote: "These open free outside websites in a new tab. Learn from them; the reading sites are copyrighted, so don't copy their text.",
@@ -89,6 +101,18 @@ const UI = {
     quizFinished: "測驗完成！🎉",
     tryAgain: "再試一次", backToDeck: "回到牌組",
     resourcesBtn: "📚 學習路線與免費資源",
+    japanBtn: "🗾 日本地圖、天氣與新聞",
+    japanTitle: "今日日本 🗾",
+    japanIntro: "即時看日本 — 這裡的天氣和新聞會自動更新，就算沒有人在編輯這個 app 也一樣。",
+    weatherHeading: "🌤️ 目前天氣",
+    newsHeading: "📰 最新新聞",
+    newsNHKLabel: "NHK（日本語）",
+    newsJTLabel: "The Japan Times（英文）",
+    japanSource: "天氣：Open-Meteo · 新聞：NHK 與 The Japan Times · 地圖：OpenStreetMap。全部免費、自動更新。",
+    loadingText: "載入中…",
+    newsError: "暫時無法載入新聞，請稍後再試。",
+    weatherError: "暫時無法載入天氣。",
+    updatedAt: (tm) => "更新於 " + tm,
     resourcesTitle: "新手學習路線",
     resourcesIntro: "給新手的步驟式路線。先從「階段 0」開始，點 ▶ 的連結就好，其他做完再看。這裡全部免費。",
     resourcesNote: "這些會在新分頁打開外部免費網站。可以從中學習；閱讀類網站有版權，請勿複製其文字。",
@@ -229,7 +253,37 @@ const RESOURCES = [
 const PROGRESS_KEY = "jtest_progress_v1";
 const PREFS_KEY = "jtest_prefs_v1";
 
-const views = ["homeView", "deckView", "studyView", "quizView", "resultView", "resourcesView"];
+const views = ["homeView", "deckView", "studyView", "quizView", "resultView", "resourcesView", "japanView"];
+
+// ---- cities shown on the Japan map (spread across the country) ----
+const CITIES = [
+  { en: "Sapporo", zh: "札幌", lat: 43.06, lon: 141.35 },
+  { en: "Sendai", zh: "仙台", lat: 38.27, lon: 140.87 },
+  { en: "Tokyo", zh: "東京", lat: 35.68, lon: 139.69 },
+  { en: "Nagoya", zh: "名古屋", lat: 35.18, lon: 136.91 },
+  { en: "Osaka", zh: "大阪", lat: 34.69, lon: 135.50 },
+  { en: "Hiroshima", zh: "廣島", lat: 34.39, lon: 132.46 },
+  { en: "Fukuoka", zh: "福岡", lat: 33.59, lon: 130.40 },
+  { en: "Naha", zh: "那霸", lat: 26.21, lon: 127.68 },
+];
+
+// WMO weather code -> emoji + short label (English / Chinese)
+function weatherInfo(code) {
+  const map = {
+    0: ["☀️", "Clear", "晴"],
+    1: ["🌤️", "Mainly clear", "晴時多雲"],
+    2: ["⛅", "Partly cloudy", "多雲"],
+    3: ["☁️", "Overcast", "陰"],
+    45: ["🌫️", "Fog", "霧"], 48: ["🌫️", "Fog", "霧"],
+    51: ["🌦️", "Drizzle", "毛毛雨"], 53: ["🌦️", "Drizzle", "毛毛雨"], 55: ["🌦️", "Drizzle", "毛毛雨"],
+    61: ["🌧️", "Rain", "雨"], 63: ["🌧️", "Rain", "雨"], 65: ["🌧️", "Heavy rain", "大雨"],
+    71: ["🌨️", "Snow", "雪"], 73: ["🌨️", "Snow", "雪"], 75: ["❄️", "Heavy snow", "大雪"],
+    80: ["🌦️", "Showers", "陣雨"], 81: ["🌦️", "Showers", "陣雨"], 82: ["⛈️", "Heavy showers", "強陣雨"],
+    85: ["🌨️", "Snow showers", "陣雪"], 86: ["🌨️", "Snow showers", "陣雪"],
+    95: ["⛈️", "Thunderstorm", "雷雨"], 96: ["⛈️", "Thunderstorm", "雷雨"], 99: ["⛈️", "Thunderstorm", "雷雨"],
+  };
+  return map[code] || ["🌡️", "—", "—"];
+}
 function show(view) {
   views.forEach(v => document.getElementById(v).hidden = (v !== view));
   document.getElementById("homeBtn").hidden = (view === "homeView");
@@ -296,6 +350,7 @@ function applyI18n() {
   renderHome();
   renderResources();
   if (!document.getElementById("deckView").hidden && current) refreshDeckMenuText();
+  if (!document.getElementById("japanView").hidden) { setJapanLabels(); loadWeather(); loadNews(); }
 }
 
 // ---- home ----
@@ -352,6 +407,135 @@ function renderResources() {
   });
 }
 function openResources() { renderResources(); show("resourcesView"); }
+
+// ---- Japan: live map, weather & news ----
+let japanMap = null;
+let japanMarkers = [];
+let japanTimer = null;
+
+function setJapanLabels() {
+  document.getElementById("japanTitle").textContent = t("japanTitle");
+  document.getElementById("japanIntro").textContent = t("japanIntro");
+  document.getElementById("weatherHeading").textContent = t("weatherHeading");
+  document.getElementById("newsHeading").textContent = t("newsHeading");
+  document.getElementById("newsNHKLabel").textContent = t("newsNHKLabel");
+  document.getElementById("newsJTLabel").textContent = t("newsJTLabel");
+  document.getElementById("japanSource").textContent = t("japanSource");
+}
+
+function openJapan() {
+  setJapanLabels();
+  show("japanView");
+  initJapanMap();
+  loadWeather();
+  loadNews();
+  // refresh by itself every 15 minutes while this page is open
+  if (japanTimer) clearInterval(japanTimer);
+  japanTimer = setInterval(() => {
+    if (!document.getElementById("japanView").hidden) { loadWeather(); loadNews(); }
+  }, 15 * 60 * 1000);
+}
+
+function initJapanMap() {
+  if (typeof L === "undefined") return; // Leaflet not loaded (offline)
+  if (japanMap) { setTimeout(() => japanMap.invalidateSize(), 50); return; }
+  japanMap = L.map("japanMap", { scrollWheelZoom: false }).setView([37.5, 137.5], 4);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 9, minZoom: 3,
+    attribution: '© OpenStreetMap',
+  }).addTo(japanMap);
+  setTimeout(() => japanMap.invalidateSize(), 50);
+}
+
+function stampUpdated() {
+  const d = new Date();
+  const hh = String(d.getHours()).padStart(2, "0");
+  const mm = String(d.getMinutes()).padStart(2, "0");
+  document.getElementById("japanUpdated").textContent = t("updatedAt", hh + ":" + mm);
+}
+
+async function loadWeather() {
+  const list = document.getElementById("weatherList");
+  if (!list.children.length) list.innerHTML = `<p class="muted">${t("loadingText")}</p>`;
+  const lats = CITIES.map(c => c.lat).join(",");
+  const lons = CITIES.map(c => c.lon).join(",");
+  const url = "https://api.open-meteo.com/v1/forecast?latitude=" + lats +
+    "&longitude=" + lons + "&current=temperature_2m,weather_code&timezone=Asia%2FTokyo";
+  try {
+    const data = await getJSON(url);
+    const arr = Array.isArray(data) ? data : [data];
+    list.innerHTML = "";
+    if (japanMarkers.length) { japanMarkers.forEach(m => japanMap && japanMap.removeLayer(m)); japanMarkers = []; }
+    CITIES.forEach((city, i) => {
+      const cur = arr[i] && arr[i].current;
+      if (!cur) return;
+      const [emoji, en, zh] = weatherInfo(cur.weather_code);
+      const cond = uiLang === "zh" ? zh : en;
+      const name = uiLang === "zh" ? city.zh : city.en;
+      const temp = Math.round(cur.temperature_2m);
+      const item = document.createElement("div");
+      item.className = "weather-item";
+      item.innerHTML = `<span class="w-emoji">${emoji}</span>` +
+        `<span class="w-city">${name}</span>` +
+        `<span class="w-temp">${temp}°C</span>` +
+        `<span class="w-cond">${cond}</span>`;
+      list.appendChild(item);
+      if (japanMap && typeof L !== "undefined") {
+        // a small temperature badge as the marker, plus a popup on click
+        const icon = L.divIcon({
+          className: "temp-badge",
+          html: `<span>${emoji}${temp}°</span>`,
+          iconSize: [46, 24], iconAnchor: [23, 12],
+        });
+        const m = L.marker([city.lat, city.lon], { icon }).addTo(japanMap);
+        m.bindPopup(`<b>${name}</b><br>${emoji} ${temp}°C · ${cond}`);
+        japanMarkers.push(m);
+      }
+    });
+    stampUpdated();
+  } catch (e) {
+    list.innerHTML = `<p class="muted">${t("weatherError")}</p>`;
+  }
+}
+
+function newsFeedURL(rss) {
+  // keyless rss2json endpoint (no extra params — 'count' would require a paid key)
+  return "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(rss);
+}
+function timeAgo(dateStr) {
+  const then = new Date((dateStr || "").replace(" ", "T"));
+  if (isNaN(then)) return "";
+  const mins = Math.max(0, Math.round((Date.now() - then.getTime()) / 60000));
+  if (mins < 60) return (uiLang === "zh" ? mins + " 分鐘前" : mins + "m ago");
+  const hrs = Math.round(mins / 60);
+  if (hrs < 24) return (uiLang === "zh" ? hrs + " 小時前" : hrs + "h ago");
+  const days = Math.round(hrs / 24);
+  return (uiLang === "zh" ? days + " 天前" : days + "d ago");
+}
+
+async function loadOneFeed(rss, elId) {
+  const box = document.getElementById(elId);
+  if (!box.children.length) box.innerHTML = `<p class="muted">${t("loadingText")}</p>`;
+  try {
+    const data = await getJSON(newsFeedURL(rss));
+    if (data.status !== "ok" || !data.items) throw new Error("bad feed");
+    box.innerHTML = "";
+    data.items.slice(0, 6).forEach(it => {
+      const a = document.createElement("a");
+      a.className = "news-item";
+      a.href = it.link; a.target = "_blank"; a.rel = "noopener";
+      a.innerHTML = `<span class="news-title">${it.title}</span>` +
+                    `<span class="news-time">${timeAgo(it.pubDate)}</span>`;
+      box.appendChild(a);
+    });
+  } catch (e) {
+    box.innerHTML = `<p class="muted">${t("newsError")}</p>`;
+  }
+}
+function loadNews() {
+  loadOneFeed("https://www3.nhk.or.jp/rss/news/cat0.xml", "newsNHK");
+  loadOneFeed("https://www.japantimes.co.jp/feed/", "newsJT");
+}
 
 // ---- deck menu ----
 function refreshDeckMenuText() {
@@ -519,6 +703,7 @@ document.getElementById("logo").onclick = goHome;
 document.getElementById("homeBtn").onclick = goHome;
 document.getElementById("uiLangBtn").onclick = toggleUiLang;
 document.getElementById("resourcesBtn").onclick = openResources;
+document.getElementById("japanBtn").onclick = openJapan;
 document.getElementById("studyBtn").onclick = startStudy;
 document.getElementById("quizBtn").onclick = startQuiz;
 document.getElementById("flashcard").onclick = flipCard;

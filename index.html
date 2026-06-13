@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jtest — Learn Japanese (N5–N1)</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <header>
@@ -19,7 +21,32 @@
   <main id="homeView">
     <p class="intro" id="intro"></p>
     <button id="resourcesBtn" class="resources-link" data-i18n="resourcesBtn">📚 Learning path &amp; free resources</button>
+    <button id="japanBtn" class="resources-link japan-link" data-i18n="japanBtn">🗾 Japan map, weather &amp; news</button>
     <div id="deckList"></div>
+  </main>
+
+  <!-- JAPAN: live map, weather & news -->
+  <main id="japanView" hidden>
+    <h2 id="japanTitle"></h2>
+    <p class="intro" id="japanIntro"></p>
+    <div id="japanMap"></div>
+    <p class="updated" id="japanUpdated"></p>
+
+    <h3 class="section" id="weatherHeading"></h3>
+    <div id="weatherList" class="weather-list"></div>
+
+    <h3 class="section" id="newsHeading"></h3>
+    <div class="news-cols">
+      <div class="news-col">
+        <h4 id="newsNHKLabel"></h4>
+        <div id="newsNHK" class="news-list"></div>
+      </div>
+      <div class="news-col">
+        <h4 id="newsJTLabel"></h4>
+        <div id="newsJT" class="news-list"></div>
+      </div>
+    </div>
+    <p class="hint" id="japanSource"></p>
   </main>
 
   <!-- RESOURCES / LEARNING PATH -->
@@ -107,6 +134,6 @@
     <span id="footerText"></span>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
