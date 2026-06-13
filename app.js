@@ -57,6 +57,8 @@ const UI = {
     heroTagline: "Flashcards, quizzes, grammar notes and a live look at Japan. Free, bilingual, built for beginners.",
     heroStart: "Start with Hiragana →",
     heroPath: "Browse decks ↓",
+    navPath: "Path", navJapan: "Japan",
+    resourcesRefsHeading: "More free resources",
     resourcesBtn: "📚 Learning path & free resources",
     japanBtn: "🗾 Japan map, weather & news",
     japanTitle: "Japan today 🗾",
@@ -110,6 +112,8 @@ const UI = {
     heroTagline: "字卡、測驗、文法筆記，還有即時的日本。免費、雙語、為新手而做。",
     heroStart: "從五十音開始 →",
     heroPath: "瀏覽牌組 ↓",
+    navPath: "路線", navJapan: "日本",
+    resourcesRefsHeading: "更多免費資源",
     resourcesBtn: "📚 學習路線與免費資源",
     japanBtn: "🗾 日本地圖、天氣與新聞",
     japanTitle: "今日日本 🗾",
@@ -216,6 +220,7 @@ const RESOURCES = [
     goal: { en: "Understand news and reports.", zh: "看懂新聞和報告。" },
   },
   {
+    kind: "ref",
     stage: { en: "📄 PDF", zh: "📄 PDF" },
     title: { en: "Free PDF textbooks (download & print)", zh: "免費 PDF 教材（可下載、列印）" },
     note: { en: "Official, 100% legal free textbooks from the Japan Foundation. Great to print or read offline. (The books are in Japanese, with free Chinese vocabulary translations on the site.)",
@@ -240,6 +245,7 @@ const RESOURCES = [
             zh: "想要一本正式課本跟著走，就從 Irodori 入門開始。" },
   },
   {
+    kind: "ref",
     stage: { en: "📖 字典", zh: "📖 字典" },
     title: { en: "Japanese ⇄ Chinese dictionaries", zh: "中日／日中字典（查單字意思）" },
     note: { en: "Look up any word and see the Chinese meaning, example sentences and pronunciation.",
@@ -399,27 +405,60 @@ function renderHome() {
 // ---- resources / learning path ----
 function tx(obj) { return (obj && (obj[uiLang] || obj.en)) || ""; }
 
+function linksHTML(item) {
+  let html = `<div class="stage-links">`;
+  item.links.forEach(lnk => {
+    const mark = lnk.primary ? "▶ " : "";
+    html += `<a class="res-link${lnk.primary ? " primary" : ""}" href="${lnk.url}" ` +
+            `target="_blank" rel="noopener">${mark}${tx(lnk.label)}</a>`;
+  });
+  return html + `</div>`;
+}
+
 function renderResources() {
   const root = document.getElementById("resourcesList");
   root.innerHTML = "";
-  RESOURCES.forEach(item => {
-    const box = document.createElement("div");
-    box.className = "stage";
-    let html = `<div class="stage-head"><span class="stage-tag">${tx(item.stage)}</span>` +
-               `<span class="stage-title">${tx(item.title)}</span></div>`;
+
+  // the numbered stages become a connected vertical path (a learning journey)
+  const steps = RESOURCES.filter(r => r.kind !== "ref");
+  const refs = RESOURCES.filter(r => r.kind === "ref");
+
+  const path = document.createElement("div");
+  path.className = "path";
+  steps.forEach((item, i) => {
+    const step = document.createElement("div");
+    step.className = "path-step";
+    let html = `<div class="path-node">${i}</div><div class="path-body">`;
+    html += `<div class="path-head"><span class="path-kicker">${tx(item.stage)}</span>` +
+            `<h3 class="path-title">${tx(item.title)}</h3></div>`;
     if (item.note) html += `<p class="stage-note">${tx(item.note)}</p>`;
-    html += `<div class="stage-links">`;
-    item.links.forEach(lnk => {
-      const mark = lnk.primary ? "▶ " : "";
-      html += `<a class="res-link${lnk.primary ? " primary" : ""}" href="${lnk.url}" ` +
-              `target="_blank" rel="noopener">${mark}${tx(lnk.label)}</a>`;
-    });
-    html += `</div>`;
+    html += linksHTML(item);
     if (item.inApp) html += `<p class="stage-meta"><b>${t("inAppLabel")}:</b> ${tx(item.inApp)}</p>`;
-    if (item.goal) html += `<p class="stage-meta">🎯 <b>${t("goalLabel")}:</b> ${tx(item.goal)}</p>`;
-    box.innerHTML = html;
-    root.appendChild(box);
+    if (item.goal) html += `<p class="path-goal">🎯 <b>${t("goalLabel")}:</b> ${tx(item.goal)}</p>`;
+    html += `</div>`;
+    step.innerHTML = html;
+    path.appendChild(step);
   });
+  root.appendChild(path);
+
+  // reference shelves (PDFs, dictionaries) sit below the path as cards
+  if (refs.length) {
+    const h = document.createElement("h3");
+    h.className = "section";
+    h.textContent = t("resourcesRefsHeading");
+    root.appendChild(h);
+    refs.forEach(item => {
+      const box = document.createElement("div");
+      box.className = "stage ref-card";
+      let html = `<div class="stage-head"><span class="stage-tag">${tx(item.stage)}</span>` +
+                 `<span class="stage-title">${tx(item.title)}</span></div>`;
+      if (item.note) html += `<p class="stage-note">${tx(item.note)}</p>`;
+      html += linksHTML(item);
+      if (item.inApp) html += `<p class="stage-meta"><b>${t("inAppLabel")}:</b> ${tx(item.inApp)}</p>`;
+      box.innerHTML = html;
+      root.appendChild(box);
+    });
+  }
 }
 function openResources() { renderResources(); show("resourcesView"); }
 
@@ -427,6 +466,8 @@ function openResources() { renderResources(); show("resourcesView"); }
 let japanMap = null;
 let japanMarkers = [];
 let japanTimer = null;
+let japanFitDone = false;
+const JAPAN_BOUNDS = [[24, 122], [46, 147]]; // keeps the view locked to Japan
 
 function setJapanLabels() {
   document.getElementById("japanTitle").textContent = t("japanTitle");
@@ -454,10 +495,17 @@ function openJapan() {
 function initJapanMap() {
   if (typeof L === "undefined") return; // Leaflet not loaded (offline)
   if (japanMap) { setTimeout(() => japanMap.invalidateSize(), 50); return; }
-  japanMap = L.map("japanMap", { scrollWheelZoom: false }).setView([37.5, 137.5], 4);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 9, minZoom: 3,
-    attribution: '© OpenStreetMap',
+  japanMap = L.map("japanMap", {
+    scrollWheelZoom: false,
+    minZoom: 4, maxZoom: 8,
+    maxBounds: JAPAN_BOUNDS,
+    maxBoundsViscosity: 1.0,          // can't drag away from Japan
+  }).setView([37.6, 138], 5);
+  // clean grayscale basemap with NO labels, so neighbouring countries are
+  // anonymous and Japan + our markers are the only focus (CARTO, free, attributed)
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png", {
+    subdomains: "abcd", maxZoom: 8,
+    attribution: '© OpenStreetMap, © CARTO',
   }).addTo(japanMap);
   setTimeout(() => japanMap.invalidateSize(), 50);
 }
@@ -507,6 +555,11 @@ async function loadWeather() {
         japanMarkers.push(m);
       }
     });
+    // frame the whole country once (so every city is visible), then leave it
+    if (!japanFitDone && japanMap && japanMarkers.length && typeof L !== "undefined") {
+      japanMap.fitBounds(L.featureGroup(japanMarkers).getBounds().pad(0.18));
+      japanFitDone = true;
+    }
     stampUpdated();
   } catch (e) {
     list.innerHTML = `<p class="muted">${t("weatherError")}</p>`;
@@ -717,8 +770,8 @@ function goHome() { renderHome(); show("homeView"); }
 document.getElementById("logo").onclick = goHome;
 document.getElementById("homeBtn").onclick = goHome;
 document.getElementById("uiLangBtn").onclick = toggleUiLang;
-document.getElementById("resourcesBtn").onclick = openResources;
-document.getElementById("japanBtn").onclick = openJapan;
+document.getElementById("navPath").onclick = openResources;
+document.getElementById("navJapan").onclick = openJapan;
 document.getElementById("heroStart").onclick = () => openDeck({ id: "hiragana", label: "Hiragana", kana: true });
 document.getElementById("heroPath").onclick = () =>
   document.getElementById("deckList").scrollIntoView({ behavior: "smooth", block: "start" });

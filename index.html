@@ -6,15 +6,21 @@
   <title>Jtest — Learn Japanese (N5–N1)</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <header>
     <h1 id="logo" title="Back to menu">Jtest <span class="sub">日本語 N5–N1</span></h1>
-    <div class="head-right">
-      <button id="uiLangBtn" class="ghost light">中文</button>
-      <button id="homeBtn" class="ghost light" hidden data-i18n="backToDecks">← Decks</button>
-    </div>
+    <nav class="nav">
+      <button id="navPath" class="nav-btn" aria-label="Learning path">
+        <span class="nav-ico">📚</span><span class="nav-label" data-i18n="navPath">Path</span>
+      </button>
+      <button id="navJapan" class="nav-btn" aria-label="Japan map">
+        <span class="nav-ico">🗾</span><span class="nav-label" data-i18n="navJapan">Japan</span>
+      </button>
+      <button id="uiLangBtn" class="nav-btn">中文</button>
+      <button id="homeBtn" class="nav-btn" hidden data-i18n="backToDecks">← Decks</button>
+    </nav>
   </header>
 
   <!-- HOME: list of decks -->
@@ -30,8 +36,6 @@
       </div>
     </section>
     <p class="intro" id="intro"></p>
-    <button id="resourcesBtn" class="resources-link" data-i18n="resourcesBtn">📚 Learning path &amp; free resources</button>
-    <button id="japanBtn" class="resources-link japan-link" data-i18n="japanBtn">🗾 Japan map, weather &amp; news</button>
     <div id="deckList"></div>
   </main>
 
@@ -144,6 +148,6 @@
     <span id="footerText"></span>
   </footer>
 
-  <script src="app.js?v=5"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>
