@@ -1,5 +1,21 @@
-/* Jtest — minimalist restyle. Single locked accent: reddish-orange.
-   Native CSS only (no framework) so the app stays a zero-build static site. */
+/* Jtest — editorial restyle. Single locked accent: reddish-orange.
+   Native CSS only (no framework) so the app stays a zero-build static site.
+   Display type: Archivo (SIL OFL, self-hosted in assets/fonts). */
+
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/archivo-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/archivo-800.woff2") format("woff2");
+}
 
 :root {
   /* surfaces — warm off-white paper, never pure black/white */
@@ -14,6 +30,12 @@
   --accent: #cc4326;        /* fills / badges (white text passes AA) */
   --accent-ink: #a8351c;    /* accent-coloured text & links on paper */
   --accent-soft: #fbe9e2;   /* tinted selected / primary backgrounds */
+  --accent-light: #f0815c;  /* accent on dark surfaces (hero) */
+
+  /* type: Archivo for Latin display, system stack carries CJK */
+  --font-display: "Archivo", -apple-system, "Segoe UI", "Hiragino Sans",
+                  "Microsoft JhengHei", "Yu Gothic", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
 
   /* semantic feedback (quiz only) */
   --good: #2f7d5b;
@@ -59,9 +81,11 @@ header {
 }
 header h1 {
   margin: 0;
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: -.02em;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
   color: var(--ink);
   cursor: pointer;
   user-select: none;
@@ -89,18 +113,78 @@ main {
   padding: 34px 20px 56px;
 }
 
+/* ---------- cinematic hero (home) ---------- */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: var(--r);
+  background: #18120f;
+  color: #fff;
+  padding: 52px 30px 46px;
+  margin: 0 0 30px;
+}
+.hero::before {                 /* duotone red-orange wash */
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background:
+    radial-gradient(130% 120% at 88% 4%, rgba(204,67,38,.62), transparent 56%),
+    linear-gradient(135deg, #18120f 0%, #2a1410 52%, #43160a 100%);
+}
+.hero::after {                  /* fine scanlines for a technical, filmic grain */
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .10;
+  background: repeating-linear-gradient(0deg, #000 0 1px, transparent 1px 3px);
+  pointer-events: none;
+}
+.hero-glyph {
+  position: absolute; right: -3%; top: 50%; transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(240px, 42vw, 460px); line-height: .8; font-weight: 800;
+  color: #fff; opacity: .05; z-index: -1; pointer-events: none; user-select: none;
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 11px; margin: 0 0 18px;
+  font-family: var(--font-mono); font-size: .72rem;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--accent-light);
+}
+.hud-idx {
+  border: 1px solid rgba(255,255,255,.28); color: rgba(255,255,255,.8);
+  padding: 2px 7px; border-radius: 4px; font-size: .68rem; letter-spacing: .12em;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 800; letter-spacing: -.025em; line-height: .94;
+  font-size: clamp(2.7rem, 9vw, 4.6rem);
+  margin: 0 0 18px; text-transform: none;
+}
+.hero-tagline { color: rgba(255,255,255,.74); line-height: 1.6; max-width: 44ch; margin: 0 0 26px; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero .ghost-light {
+  background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.35);
+  border-radius: var(--r-sm); padding: 11px 18px; font-weight: 600; font-size: .95rem;
+  transition: border-color .15s var(--ease), background .15s var(--ease);
+}
+.hero .ghost-light:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+
 .intro { color: var(--muted); margin: 0 0 22px; line-height: 1.6; max-width: 60ch; }
 .hint { color: var(--faint); font-size: .82rem; margin-top: 16px; line-height: 1.6; }
 
-h2 { margin: 0 0 4px; font-size: 1.6rem; font-weight: 700; letter-spacing: -.02em; }
+h2 {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-size: 1.9rem; font-weight: 800;
+  letter-spacing: -.02em; line-height: 1.05;
+}
 h3.section {
-  margin: 30px 0 12px;
-  font-size: .9rem;
-  font-weight: 600;
-  letter-spacing: .04em;
+  display: flex; align-items: center; gap: 14px;
+  margin: 32px 0 14px;
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .12em;
   color: var(--muted);
   text-transform: uppercase;
 }
+h3.section::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 .stats { color: var(--muted); margin: 0 0 4px; }
 
 /* ---------- buttons ---------- */
@@ -152,16 +236,26 @@ button:disabled { opacity: .38; cursor: default; }
 .resources-link:hover { border-color: var(--accent); color: var(--accent-ink); transform: translateY(-1px); }
 .japan-link { margin-bottom: 26px; }
 
-/* ---------- deck list ---------- */
+/* ---------- deck list (editorial index) ---------- */
+#deckList { counter-reset: grp; }
 .deck-group { margin-bottom: 26px; }
 .deck-group h3 {
-  margin: 0 0 12px;
+  display: flex; align-items: center; gap: 12px;
+  margin: 0 0 14px;
+  font-family: var(--font-mono);
   font-size: .8rem;
-  font-weight: 600;
-  letter-spacing: .08em;
+  font-weight: 500;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--ink);
 }
+.deck-group h3::before {
+  counter-increment: grp;
+  content: counter(grp, decimal-leading-zero);
+  color: var(--accent);
+  font-weight: 600;
+}
+.deck-group h3::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 .deck-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -179,8 +273,8 @@ button:disabled { opacity: .38; cursor: default; }
   transition: border-color .15s var(--ease), transform .12s var(--ease);
 }
 .deck-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-.deck-card b { font-weight: 600; }
-.deck-card .count { display: block; color: var(--faint); font-size: .8rem; margin-top: 5px; }
+.deck-card b { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; letter-spacing: -.01em; }
+.deck-card .count { display: block; font-family: var(--font-mono); color: var(--faint); font-size: .72rem; letter-spacing: .03em; margin-top: 6px; }
 .deck-card .bestbar {
   height: 4px; border-radius: var(--r-pill); background: var(--line);
   margin-top: 11px; overflow: hidden;
@@ -256,7 +350,7 @@ button:disabled { opacity: .38; cursor: default; }
 .feedback.good { color: var(--good); }
 .feedback.bad { color: var(--accent-ink); }
 
-.big-score { font-size: 2.4rem; text-align: center; margin: 26px 0; font-weight: 700; letter-spacing: -.02em; }
+.big-score { font-family: var(--font-display); font-size: 2.8rem; text-align: center; margin: 26px 0; font-weight: 800; letter-spacing: -.02em; }
 
 /* ---------- learning path / resources ---------- */
 .stage {

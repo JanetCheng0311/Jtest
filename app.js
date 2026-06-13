@@ -52,6 +52,11 @@ const UI = {
     prev: "‹ Prev", flip: "Flip", next: "Next ›",
     quizFinished: "Quiz finished! 🎉",
     tryAgain: "Try again", backToDeck: "Back to deck",
+    heroEyebrow: "JLPT N5 → N1 · Self-study",
+    heroTitleHTML: "Learn<br>Japanese.",
+    heroTagline: "Flashcards, quizzes, grammar notes and a live look at Japan. Free, bilingual, built for beginners.",
+    heroStart: "Start with Hiragana →",
+    heroPath: "Browse decks ↓",
     resourcesBtn: "📚 Learning path & free resources",
     japanBtn: "🗾 Japan map, weather & news",
     japanTitle: "Japan today 🗾",
@@ -100,6 +105,11 @@ const UI = {
     prev: "‹ 上一個", flip: "翻面", next: "下一個 ›",
     quizFinished: "測驗完成！🎉",
     tryAgain: "再試一次", backToDeck: "回到牌組",
+    heroEyebrow: "JLPT N5 → N1 · 自學日語",
+    heroTitleHTML: "學日語，<br>從零開始。",
+    heroTagline: "字卡、測驗、文法筆記，還有即時的日本。免費、雙語、為新手而做。",
+    heroStart: "從五十音開始 →",
+    heroPath: "瀏覽牌組 ↓",
     resourcesBtn: "📚 學習路線與免費資源",
     japanBtn: "🗾 日本地圖、天氣與新聞",
     japanTitle: "今日日本 🗾",
@@ -341,6 +351,11 @@ function applyI18n() {
     el.textContent = t(el.getAttribute("data-i18n"));
   });
   document.getElementById("intro").innerHTML = t("introHTML");
+  document.getElementById("heroEyebrow").textContent = t("heroEyebrow");
+  document.getElementById("heroTitle").innerHTML = t("heroTitleHTML");
+  document.getElementById("heroTagline").textContent = t("heroTagline");
+  document.getElementById("heroStart").textContent = t("heroStart");
+  document.getElementById("heroPath").textContent = t("heroPath");
   document.getElementById("footerText").textContent = t("footer");
   document.getElementById("uiLangBtn").textContent = uiLang === "en" ? "中文" : "EN";
   document.getElementById("resourcesTitle").textContent = t("resourcesTitle");
@@ -704,6 +719,9 @@ document.getElementById("homeBtn").onclick = goHome;
 document.getElementById("uiLangBtn").onclick = toggleUiLang;
 document.getElementById("resourcesBtn").onclick = openResources;
 document.getElementById("japanBtn").onclick = openJapan;
+document.getElementById("heroStart").onclick = () => openDeck({ id: "hiragana", label: "Hiragana", kana: true });
+document.getElementById("heroPath").onclick = () =>
+  document.getElementById("deckList").scrollIntoView({ behavior: "smooth", block: "start" });
 document.getElementById("studyBtn").onclick = startStudy;
 document.getElementById("quizBtn").onclick = startQuiz;
 document.getElementById("flashcard").onclick = flipCard;
